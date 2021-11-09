@@ -1,0 +1,17 @@
+.profile__mobile {
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    "name edit"
+    "occupation occupation";
+  margin-left: 30px;
+  margin-right: 18px;
+  margin-top: 26px;
+}
+@media screen and (max-width: 890px) {
+  .profile__mobile {
+    max-width: 282px;
+    width: 100%;
+    margin: 26px 0 0 0;
+  }
+}

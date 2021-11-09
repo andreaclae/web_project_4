@@ -1,0 +1,11 @@
+.element-grid__text-heart {
+  height: 19px;
+  width: 21px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.element-grid__text-heart:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

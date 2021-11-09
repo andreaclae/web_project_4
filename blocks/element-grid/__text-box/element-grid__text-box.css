@@ -1,0 +1,24 @@
+.element-grid__text-box {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  background-color: white;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  width: 1fr;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  border-radius: 0 0 15px 15px;
+}
+
+@media screen and (max-width: 890px) {
+  .element-grid__text-box {
+    max-width: 247px;
+    width: 100%;
+  }
+}
