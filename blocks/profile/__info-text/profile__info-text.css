@@ -1,4 +1,4 @@
-.profile__mobile {
+.profile__info-text {
   display: grid;
   justify-content: center;
   grid-template-areas:
@@ -9,7 +9,7 @@
   margin-top: 26px;
 }
 @media screen and (max-width: 890px) {
-  .profile__mobile {
+  .profile__info-text {
     max-width: 282px;
     width: 100%;
     margin: 26px 0 0 0;
