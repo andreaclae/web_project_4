@@ -12,3 +12,8 @@
   cursor: pointer;
   opacity: 0.5;
 }
+@media (hover: hover) and (max-width: 500px) {
+  .element-grid__text-heart:hover {
+    opacity: 0;
+  }
+}
