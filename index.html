@@ -20,21 +20,38 @@
               class="profile__image"
             />
             <div class="profile__info-text">
-              <h1 class="profile__name">Jacques Cousteau</h1>
-              <h2 class="profile__occupation">Explorer</h2>
-              <img
-                src="images/Edit_Button.png"
-                alt="profile image"
+              <h1 class="profile__name" id="profile-name">Jacques Cousteau</h1>
+              <h2 class="profile__occupation" id="profile-description">
+                Explorer
+              </h2>
+              <button
+                id="open-modal-button"
                 class="profile__edit-button"
-              />
+              ></button>
             </div>
           </div>
+          <div class="modal" id="edit-profile-modal">
+            <div class="modal__content">
+              <button class="modal__close-button"></button>
+              <h1 class="modal__title">Edit Profile</h1>
+              <form class="modal__form" id="edit-profile-form">
+                <input
+                  name="name"
+                  placeholder="Jacque Cousteau"
+                  class="modal__input"
+                />
+                <input
+                  name="description"
+                  placeholder="Explorer"
+                  class="modal__input"
+                />
+                <button type="submit" class="modal__submit-button">Save</button>
+              </form>
+            </div>
+          </div>
+
           <div class="profile__add-button">
-            <img
-              src="images/add.png"
-              alt="profile image"
-              class="profile__add-button_image"
-            />
+            <button class="profile__add-button_image"></button>
           </div>
         </section>
         <section class="element-grid">
@@ -46,11 +63,7 @@
             />
             <div class="element-grid__text-box">
               <p class="element-grid__text">Yosemite Valley</p>
-              <img
-                src="images/empty_heart.jpg"
-                alt="empty heart"
-                class="element-grid__text-heart"
-              />
+              <button class="element-grid__text-heart"></button>
             </div>
           </div>
           <div>
@@ -61,11 +74,7 @@
             />
             <div class="element-grid__text-box">
               <p class="element-grid__text">Lake Louise</p>
-              <img
-                src="images/empty_heart.jpg"
-                alt="empty heart"
-                class="element-grid__text-heart"
-              />
+              <button class="element-grid__text-heart"></button>
             </div>
           </div>
           <div>
@@ -76,11 +85,7 @@
             />
             <div class="element-grid__text-box">
               <p class="element-grid__text">Bald Mountains</p>
-              <img
-                src="images/empty_heart.jpg"
-                alt="empty heart"
-                class="element-grid__text-heart"
-              />
+              <button class="element-grid__text-heart"></button>
             </div>
           </div>
           <div>
@@ -91,11 +96,7 @@
             />
             <div class="element-grid__text-box">
               <p class="element-grid__text">Latemar</p>
-              <img
-                src="images/empty_heart.jpg"
-                alt="empty heart"
-                class="element-grid__text-heart"
-              />
+              <button class="element-grid__text-heart"></button>
             </div>
           </div>
           <div>
@@ -106,11 +107,7 @@
             />
             <div class="element-grid__text-box">
               <p class="element-grid__text">Vanoise National</p>
-              <img
-                src="images/empty_heart.jpg"
-                alt="empty heart"
-                class="element-grid__text-heart"
-              />
+              <button class="element-grid__text-heart"></button>
             </div>
           </div>
           <div>
@@ -121,11 +118,7 @@
             />
             <div class="element-grid__text-box">
               <p class="element-grid__text">Lago di Braies</p>
-              <img
-                src="images/empty_heart.jpg"
-                alt="empty heart"
-                class="element-grid__text-heart"
-              />
+              <button class="element-grid__text-heart"></button>
             </div>
           </div>
         </section>
@@ -134,5 +127,6 @@
         <p class="footer__text">© 2021. Around the U.S.</p>
       </footer>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -1,0 +1,10 @@
+.modal__input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+}
+.modal__input:first-child {
+  margin-top: 0;
+}

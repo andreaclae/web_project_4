@@ -1,4 +1,6 @@
 .element-grid__text {
   margin: 0;
   padding: 0;
+  inline-size: 205px;
+  overflow: hidden;
 }

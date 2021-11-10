@@ -1,0 +1,14 @@
+.modal__content {
+  background-color: white;
+  min-width: 430px;
+  padding: 36px;
+  border-radius: 10px;
+  position: relative;
+}
+@media screen and (max-width: 625px) {
+  .modal__content {
+    min-width: 188px;
+    min-height: 278px;
+    padding: 22px 25px;
+  }
+}

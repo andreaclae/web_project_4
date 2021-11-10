@@ -1,16 +1,11 @@
 # Project 4: Around The U.S.
 
-### Overview
+By: Andrea Claeyssen
+Link to page: https://andreaclae.github.io/web_project_4/
+Link to repository: https://github.com/andreaclae/web_project_4
 
-* Figma
-* Images
+This project is a mockup social media page similar to an Instagram.
 
-**Figma**
+This is my first time utilizing JavaScript to make a webpage. This includes: functions, if statements, and queryselectors. I have also used, grids, flexboxes, positioning. I utilized a brief from Figma in order to get all of the different criteria for the page.
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
-
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
+Hope you enjoy! :)

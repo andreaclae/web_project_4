@@ -4,7 +4,14 @@
   justify-content: space-between;
   margin: 36px auto 46px;
 }
-@media screen and (max-width: 890px) {
+
+@media screen and (min-width: 625px) and (max-width: 890px) {
+  .profile {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 625px) {
   .profile {
     max-width: 282px;
     width: 100%;

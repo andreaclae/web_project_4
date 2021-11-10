@@ -16,7 +16,13 @@
   border-radius: 0 0 15px 15px;
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (min-width: 625px) and (max-width: 890px) {
+  .element-grid__text-box {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 625px) {
   .element-grid__text-box {
     max-width: 247px;
     width: 100%;

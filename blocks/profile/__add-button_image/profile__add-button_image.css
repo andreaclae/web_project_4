@@ -1,4 +1,7 @@
 .profile__add-button_image {
+  border: none;
+  background-color: transparent;
+  background-image: url("/images/add.png");
   width: 22px;
   height: 22px;
   display: flex;
@@ -9,5 +12,6 @@
   .profile__add-button_image {
     width: 16px;
     height: 16px;
+    background-size: contain;
   }
 }
