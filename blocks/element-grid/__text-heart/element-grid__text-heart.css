@@ -8,12 +8,10 @@
   justify-content: center;
   align-self: center;
 }
-.element-grid__text-heart:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
-@media (hover: hover) and (max-width: 500px) {
+
+@media (hover: hover) {
   .element-grid__text-heart:hover {
-    opacity: 0;
+    cursor: pointer;
+    opacity: 0.5;
   }
 }
