@@ -1,3 +1,4 @@
 .element-grid__text-heart_empty {
   background-image: url("../../../../images/empty_heart.svg");
+  background-repeat: no-repeat;
 }
