@@ -1,7 +1,6 @@
 .element-grid__text-heart {
   border: none;
   background-color: transparent;
-  background-image: url("/images/empty_heart.jpg");
   height: 19px;
   width: 21px;
   background-size: contain;

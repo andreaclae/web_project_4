@@ -11,8 +11,7 @@ const editProfileSubmit = editProfileForm.querySelector('button[type=submit]');
 const profileName = document.querySelector('#profile-name');
 const profileDescription = document.querySelector('#profile-description');
 
-const likeButton = document.querySelector('.element-grid__text-heart');
-let likeCounter = 0;
+const likeButtons = document.querySelectorAll('.element-grid__text-heart');
 
 
 editProfileCloseButton.addEventListener("click", () => {
@@ -37,15 +36,18 @@ editProfileForm.addEventListener("submit", (e) => {
 
 })
 
-likeButton.addEventListener("click", () => {
-    if(likeCounter == 0){
-likeButton.classList.remove("element-grid__text-heart");                
-likeButton.classList.add("element-grid__text-heart_full");
-likeCounter ++;
-    }else{
-        likeButton.classList.remove("element-grid__text-heart_full");
-        likeButton.classList.add("element-grid__text-heart");
-        likeCounter --;
-    }
 
-})
+
+likeButtons.forEach((likeButtons) => {
+    likeButtons.addEventListener("click", () => {
+if( likeButtons.classList.contains('element-grid__text-heart_empty')){
+likeButtons.classList.remove("element-grid__text-heart_empty");
+likeButtons.classList.add("element-grid__text-heart_full");
+} else{
+    likeButtons.classList.remove("element-grid__text-heart_full");
+likeButtons.classList.add("element-grid__text-heart_empty");
+}
+    })
+    })
+
+

@@ -29,7 +29,8 @@
 @import url("../blocks/profile/__mobile/profile__mobile.css");
 
 @import url("../blocks/element-grid/element-grid.css");
-@import url("../blocks/element-grid/__text-heart_full/element-grid__text-heart_full.css");
+@import url("../blocks/element-grid/__text-heart/_empty/element-grid__text-heart_empty.css");
+@import url("../blocks/element-grid/__text-heart/_full/element-grid__text-heart_full.css");
 @import url("../blocks/element-grid/__text-box/element-grid__text-box.css");
 @import url("../blocks/element-grid/__text/element-grid__text.css");
 @import url("../blocks/element-grid/__text-heart/element-grid__text-heart.css");
