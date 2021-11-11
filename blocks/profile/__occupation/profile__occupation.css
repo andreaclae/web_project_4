@@ -6,9 +6,14 @@
   line-height: 22px;
   margin-top: 16px;
   font-weight: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 @media screen and (max-width: 890px) {
   .profile__occupation {
+    margin-top: 14px;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
