@@ -5,14 +5,14 @@
   height: 50px;
   background: #000000;
   border-radius: 2px;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 17px;
   text-align: center;
   color: #ffffff;
 }
 .modal__submit-button:hover {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 625px) {

@@ -1,12 +1,10 @@
 @import url("../vendor/normalize.css");
 @import url("../blocks/page/page.css");
 @import url("../vendor/fonts/inter.css");
-@import url("../blocks/element/element.css");
 
 @import url("../blocks/logo/logo.css");
 @import url("../blocks/header/header.css");
 @import url("../blocks/profile/__add-button/profile__add-button.css");
-@import url("../blocks/profile/__add-button_image/profile__add-button_image.css");
 @import url("../blocks/profile/__edit-button/profile__edit-button.css");
 
 @import url("../blocks/modal/modal.css");
@@ -15,25 +13,22 @@
 @import url("../blocks/modal/__title/modal__title.css");
 @import url("../blocks/modal/__form/modal__form.css");
 @import url("../blocks/modal/__submit-button/modal__submit-button.css");
-@import url("../blocks/modal/__open/modal__open.css");
+@import url("../blocks/modal/_open/modal_open.css");
 @import url("../blocks/modal/__input/modal__input.css");
 
 @import url("../blocks/profile/profile.css");
 @import url("../blocks/profile/__image/profile__image.css");
 @import url("../blocks/profile/__info-box/profile__info-box.css");
 @import url("../blocks/profile/__info-text/profile__info-text.css");
-@import url("../blocks/profile/__text/profile__text.css");
 @import url("../blocks/profile/__name/profile__name.css");
 @import url("../blocks/profile/__occupation/profile__occupation.css");
-@import url("../blocks/profile/__button/profile__edit-button.css");
-@import url("../blocks/profile/__mobile/profile__mobile.css");
 
 @import url("../blocks/element-grid/element-grid.css");
-@import url("../blocks/element-grid/__text-heart/_empty/element-grid__text-heart_empty.css");
-@import url("../blocks/element-grid/__text-heart/_full/element-grid__text-heart_full.css");
-@import url("../blocks/element-grid/__text-box/element-grid__text-box.css");
-@import url("../blocks/element-grid/__text/element-grid__text.css");
-@import url("../blocks/element-grid/__text-heart/element-grid__text-heart.css");
-@import url("../blocks/element-grid/__image/element-grid__image.css");
+@import url("../blocks/card/__text-box/card__text-box.css");
+@import url("../blocks/card/__text/card__text.css");
+@import url("../blocks/card/__image/card__image.css");
+@import url("../blocks/card/__text-heart/card__text-heart.css");
+@import url("../blocks/card/__text-heart/_full/card__text-heart_full.css");
+
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__text/footer__text.css");

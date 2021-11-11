@@ -1,53 +1,67 @@
-const editProfileModal = document.querySelector('#edit-profile-modal');
-const editProfileCloseButton = editProfileModal.querySelector('.modal__close-button');
+const editProfileModal = document.querySelector("#edit-profile-modal");
+const editProfileCloseButton = editProfileModal.querySelector(
+  ".modal__close-button"
+);
 
-const openModalButton = document.querySelector('#open-modal-button');
+const openModalButton = document.querySelector("#open-modal-button");
 
-const editProfileForm = document.querySelector('#edit-profile-form');
+const editProfileForm = document.querySelector("#edit-profile-form");
 const nameInput = editProfileForm.name;
 const descriptionInput = editProfileForm.description;
-const editProfileSubmit = editProfileForm.querySelector('button[type=submit]');
 
-const profileName = document.querySelector('#profile-name');
-const profileDescription = document.querySelector('#profile-description');
+const editProfileSubmit = editProfileForm.querySelector("button[type=submit]");
 
-const likeButtons = document.querySelectorAll('.element-grid__text-heart');
+const profileName = document.querySelector("#profile-name");
+const profileDescription = document.querySelector("#profile-description");
 
+const likeButtons = document.querySelectorAll(".card__text-heart");
 
-editProfileCloseButton.addEventListener("click", () => {
-    editProfileModal.classList.remove("modal__open");
-})
-openModalButton.addEventListener("click", () => { 
-    editProfileModal.classList.add("modal__open");
-})
-editProfileModal.addEventListener("click", (e) => {
-if(e.target == editProfileModal){
-    editProfileModal.classList.remove("modal__open");
+function closeButton() {
+  editProfileCloseButton.addEventListener("click", () => {
+    editProfileModal.classList.remove("modal_open");
+  });
+  openModalButton.addEventListener("click", () => {
+    editProfileModal.classList.add("modal_open");
+
+    nameInput.value = profileName.innerText;
+    descriptionInput.value = profileDescription.innerText;
+  });
+  editProfileModal.addEventListener("click", (e) => {
+    if (e.target == editProfileModal) {
+      editProfileModal.classList.remove("modal_open");
+    }
+  });
 }
-})
 
-editProfileForm.addEventListener("submit", (e) => {
+function changeInputForm() {
+  editProfileForm.addEventListener("submit", (e) => {
     e.preventDefault();
-   profileName.textContent = nameInput.value;
-   profileDescription.textContent = descriptionInput.value;
+    profileName.textContent = nameInput.value;
+    profileDescription.textContent = descriptionInput.value;
 
-   editProfileModal.classList.remove("modal__open");
+    editProfileModal.classList.remove("modal_open");
     editProfileForm.reset();
-
-})
-
-
-
-likeButtons.forEach((likeButtons) => {
-    likeButtons.addEventListener("click", () => {
-if( likeButtons.classList.contains('element-grid__text-heart_empty')){
-likeButtons.classList.remove("element-grid__text-heart_empty");
-likeButtons.classList.add("element-grid__text-heart_full");
-} else{
-    likeButtons.classList.remove("element-grid__text-heart_full");
-likeButtons.classList.add("element-grid__text-heart_empty");
+  });
 }
-    })
-    })
+closeButton();
+changeInputForm();
 
+/*
+Deleting without deleting- please disregard
+function likeButton() {
+  likeButtons.forEach((likeButtons) => {
+    likeButtons.addEventListener("click", () => {
+      if (likeButtons.classList.contains("card__text-heart_empty")) {
+        likeButtons.classList.remove("card__text-heart_empty");
+        likeButtons.classList.add("card__text-heart_full");
+      } else {
+        likeButtons.classList.remove("card__text-heart_full");
+        likeButtons.classList.add("card__text-heart_empty");
+      }
+    });
+  });
+}
 
+closeButton();
+changeInputForm();
+*/

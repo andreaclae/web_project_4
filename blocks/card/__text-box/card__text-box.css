@@ -1,4 +1,4 @@
-.element-grid__text-box {
+.card__text-box {
   margin: 0;
   padding: 0;
   display: flex;
@@ -8,22 +8,21 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
-  width: 1fr;
   padding-left: 20px;
   padding-right: 15px;
   padding-top: 25px;
   padding-bottom: 30px;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 10px 10px;
 }
 
 @media screen and (min-width: 625px) and (max-width: 890px) {
-  .element-grid__text-box {
+  .card__text-box {
     max-width: 500px;
   }
 }
 
 @media screen and (max-width: 625px) {
-  .element-grid__text-box {
+  .card__text-box {
     max-width: 247px;
     width: 100%;
   }

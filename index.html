@@ -21,115 +21,103 @@
             />
             <div class="profile__info-text">
               <h1 class="profile__name" id="profile-name">Jacques Cousteau</h1>
-              <h2 class="profile__occupation" id="profile-description">
+              <p class="profile__occupation" id="profile-description">
                 Explorer
-              </h2>
+              </p>
               <button
                 id="open-modal-button"
                 class="profile__edit-button"
+                type="button"
               ></button>
-            </div>
-          </div>
-          <div class="modal" id="edit-profile-modal">
-            <div class="modal__content">
-              <button class="modal__close-button"></button>
-              <h1 class="modal__title">Edit Profile</h1>
-              <form class="modal__form" id="edit-profile-form">
-                <input
-                  name="name"
-                  placeholder="Jacque Cousteau"
-                  class="modal__input"
-                />
-                <input
-                  name="description"
-                  placeholder="Explorer"
-                  class="modal__input"
-                />
-                <button type="submit" class="modal__submit-button">Save</button>
-              </form>
             </div>
           </div>
 
-          <div class="profile__add-button">
-            <button class="profile__add-button_image"></button>
-          </div>
+          <button class="profile__add-button" type="button">
+            <img src="/images/add.svg" alt="" />
+          </button>
         </section>
         <section class="element-grid">
-          <div>
+          <div class="card">
             <img
               src="images/yosemite_valley.jpg"
               alt="yosemite valley- river with mountain in background"
-              class="element-grid__image"
+              class="card__image"
             />
-            <div class="element-grid__text-box">
-              <p class="element-grid__text">Yosemite Valley</p>
+            <div class="card__text-box">
+              <h2 class="card__text">Yosemite Valley</h2>
               <button
-                class="element-grid__text-heart element-grid__text-heart_empty"
+                class="card__text-heart card__text-heart_empty"
+                type="button"
               ></button>
             </div>
           </div>
-          <div>
+          <div class="card">
             <img
               src="images/lake_louise.png"
               alt="lake louise with mountain backdrop"
-              class="element-grid__image"
+              class="card__image"
             />
-            <div class="element-grid__text-box">
-              <p class="element-grid__text">Lake Louise</p>
+            <div class="card__text-box">
+              <h2 class="card__text">Lake Louise</h2>
               <button
-                class="element-grid__text-heart element-grid__text-heart_empty"
+                class="card__text-heart card__text-heart_empty"
+                type="button"
               ></button>
             </div>
           </div>
-          <div>
+          <div class="card">
             <img
               src="images/bald_mountains.png"
               alt="sunset over bald mountains"
-              class="element-grid__image"
+              class="card__image"
             />
-            <div class="element-grid__text-box">
-              <p class="element-grid__text">Bald Mountains</p>
+            <div class="card__text-box">
+              <h2 class="card__text">Bald Mountains</h2>
               <button
-                class="element-grid__text-heart element-grid__text-heart_empty"
+                class="card__text-heart card__text-heart_empty"
+                type="button"
               ></button>
             </div>
           </div>
-          <div>
+          <div class="card">
             <img
               src="images/latemar.png"
               alt="latemar at night with stars"
-              class="element-grid__image"
+              class="card__image"
             />
-            <div class="element-grid__text-box">
-              <p class="element-grid__text">Latemar</p>
+            <div class="card__text-box">
+              <h2 class="card__text">Latemar</h2>
               <button
-                class="element-grid__text-heart element-grid__text-heart_empty"
+                class="card__text-heart card__text-heart_empty"
+                type="button"
               ></button>
             </div>
           </div>
-          <div>
+          <div class="card">
             <img
               src="images/vanoise_national.png"
               alt="mountain by the lake at vanoise national"
-              class="element-grid__image"
+              class="card__image"
             />
-            <div class="element-grid__text-box">
-              <p class="element-grid__text">Vanoise National</p>
+            <div class="card__text-box">
+              <h2 class="card__text">Vanoise National Park</h2>
               <button
-                class="element-grid__text-heart element-grid__text-heart_empty"
+                class="card__text-heart card__text-heart_empty"
+                type="button"
               ></button>
             </div>
           </div>
-          <div>
+          <div class="card">
             <img
               src="images/Lago_di_braies.png"
               alt="boats on lago di Braies"
-              class="element-grid__image"
+              class="card__image"
             />
-            <div class="element-grid__text-box">
-              <p class="element-grid__text">Lago di Braies</p>
+            <div class="card__text-box">
+              <h2 class="card__text">Lago di Braies</h2>
               <button
-                class="element-grid__text-heart element-grid__text-heart_empty"
+                class="card__text-heart card__text-heart_empty"
+                type="button"
               ></button>
             </div>
           </div>
@@ -138,6 +126,27 @@
       <footer class="footer">
         <p class="footer__text">© 2021. Around the U.S.</p>
       </footer>
+      <div class="modal" id="edit-profile-modal">
+        <div class="modal__content">
+          <button class="modal__close-button" type="button"></button>
+          <h2 class="modal__title">Edit Profile</h2>
+          <form class="modal__form" name="modal-form" id="edit-profile-form">
+            <input
+              name="name"
+              placeholder="Full Name"
+              class="modal__input"
+              required
+            />
+            <input
+              name="description"
+              placeholder="About Me"
+              class="modal__input"
+              required
+            />
+            <button type="submit" class="modal__submit-button">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
