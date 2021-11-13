@@ -16,21 +16,24 @@ const profileDescription = document.querySelector("#profile-description");
 
 const likeButtons = document.querySelectorAll(".card__text-heart");
 
-function closeButton() {
+function closeEditForm() {
   editProfileCloseButton.addEventListener("click", () => {
     editProfileModal.classList.remove("modal_open");
-  });
-  openModalButton.addEventListener("click", () => {
-    editProfileModal.classList.add("modal_open");
-/*I use inner Text because after looking at it with the tutor if we use textContent, extra spacing is added before the second input*/
-    nameInput.value = profileName.innerText;
-    descriptionInput.value = profileDescription.innerText;
   });
   editProfileModal.addEventListener("click", (e) => {
     if (e.target == editProfileModal) {
       editProfileModal.classList.remove("modal_open");
     }
   });
+}
+function openEditForm() {
+  openModalButton.addEventListener("click", () => {
+    editProfileModal.classList.add("modal_open");
+/*I use inner Text because after looking at it with the tutor if we use textContent, extra spacing is added before the second input*/
+    nameInput.value = profileName.innerText;
+    descriptionInput.value = profileDescription.innerText;
+  });
+
 }
 
 function changeInputForm() {
@@ -42,7 +45,9 @@ function changeInputForm() {
     editProfileForm.reset();
   });
 }
-closeButton();
+
+openEditForm();
+closeEditForm();
 changeInputForm();
 
 /*
