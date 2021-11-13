@@ -6,8 +6,8 @@
   background: #000000;
   border: none;
   border-radius: 2px;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 18px;
+  line-height: 22px;
   text-align: center;
   color: #ffffff;
 }
@@ -19,5 +19,7 @@
 @media screen and (max-width: 625px) {
   .modal__submit-button {
     min-width: 232px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

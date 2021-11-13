@@ -22,7 +22,7 @@ function closeButton() {
   });
   openModalButton.addEventListener("click", () => {
     editProfileModal.classList.add("modal_open");
-
+/*I use inner Text because after looking at it with the tutor if we use textContent, extra spacing is added before the second input*/
     nameInput.value = profileName.innerText;
     descriptionInput.value = profileDescription.innerText;
   });
@@ -37,7 +37,6 @@ function changeInputForm() {
   editProfileForm.addEventListener("submit", (e) => {
     e.preventDefault();
     profileName.textContent = nameInput.value;
-    profileDescription.textContent = descriptionInput.value;
 
     editProfileModal.classList.remove("modal_open");
     editProfileForm.reset();
