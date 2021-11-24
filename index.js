@@ -110,6 +110,9 @@ modalCloseButtons.forEach((modalCloseButton) => {
 
 function createCard(data) {
   const card = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const trashButton = card.querySelector(".card__trash");
+  const likeButton = card.querySelector(".card__text-heart");
+
   const imageElement = card.querySelector(".card__image");
   const titleElement = card.querySelector(".card__text");
 
@@ -121,6 +124,20 @@ function createCard(data) {
     modalCaption.textContent = data.title;
     openModal(imageModal);
   });
+
+  trashButton.addEventListener("click", () => {
+    const removedCard = trashButton.closest(".card");
+         removedCard.remove();
+     });
+
+    likeButton.addEventListener("click", () => {
+      if (likeButton.classList.contains("card__text-heart_full")) {
+        likeButton.classList.remove("card__text-heart_full");
+      } else {
+        likeButton.classList.add("card__text-heart_full");
+      }
+    });
+     
 
   return card;
 }
@@ -150,31 +167,7 @@ newPlaceForm.addEventListener("submit", (e) => {
   deleteButton();
 });
 
-const likeButtons = document.querySelectorAll(".card__text-heart");
 
-function likeButton() {
-  likeButtons.forEach((likeButton) => {
-    likeButton.addEventListener("click", () => {
-      if (likeButton.classList.contains("card__text-heart_full")) {
-        likeButton.classList.remove("card__text-heart_full");
-      } else {
-        likeButton.classList.add("card__text-heart_full");
-      }
-    });
-  });
-}
 
-likeButton();
 
-const trashButtons = document.querySelectorAll(".card__trash");
 
-function deleteButton() {
-  trashButtons.forEach((trashButton) => {
-    trashButton.addEventListener("click", () => {
-      const removedCard = trashButton.closest(".card");
-      removedCard.remove();
-    });
-  });
-}
-
-deleteButton();
