@@ -107,6 +107,7 @@ function createCard(data) {
   imageElement.src = data.url;
   titleElement.textContent = data.title;
 
+
   imageElement.addEventListener("click", () => {
     modalImageElement.src = data.url;
     modalCaption.textContent = data.title;
