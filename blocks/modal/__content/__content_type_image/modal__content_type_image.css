@@ -1,0 +1,8 @@
+.modal__content_type_image {
+  padding: 0;
+  max-height: 75vh;
+  max-width: 75vw;
+  background: none;
+  width: auto;
+  display: flex;
+}

@@ -25,82 +25,21 @@
                 Explorer
               </p>
               <button
-                id="open-modal-button"
+                id="open-edit-modal-button"
                 class="profile__edit-button"
                 type="button"
               ></button>
             </div>
           </div>
 
-          <button class="profile__add-button" type="button"></button>
+          <button
+            class="profile__add-button"
+            id="open-new-place-modal-button"
+            type="button"
+          ></button>
         </section>
         <section class="element-grid">
-          <div class="card">
-            <img
-              src="images/yosemite_valley.jpg"
-              alt="yosemite valley- river with mountain in background"
-              class="card__image"
-            />
-            <div class="card__text-box">
-              <h2 class="card__text">Yosemite Valley</h2>
-              <button class="card__text-heart" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="images/lake_louise.png"
-              alt="lake louise with mountain backdrop"
-              class="card__image"
-            />
-            <div class="card__text-box">
-              <h2 class="card__text">Lake Louise</h2>
-              <button class="card__text-heart" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="images/bald_mountains.png"
-              alt="sunset over bald mountains"
-              class="card__image"
-            />
-            <div class="card__text-box">
-              <h2 class="card__text">Bald Mountains</h2>
-              <button class="card__text-heart" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="images/latemar.png"
-              alt="latemar at night with stars"
-              class="card__image"
-            />
-            <div class="card__text-box">
-              <h2 class="card__text">Latemar</h2>
-              <button class="card__text-heart" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="images/vanoise_national.png"
-              alt="mountain by the lake at vanoise national"
-              class="card__image"
-            />
-            <div class="card__text-box">
-              <h2 class="card__text">Vanoise National Park</h2>
-              <button class="card__text-heart" type="button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="images/Lago_di_braies.png"
-              alt="boats on lago di Braies"
-              class="card__image"
-            />
-            <div class="card__text-box">
-              <h2 class="card__text">Lago di Braies</h2>
-              <button class="card__text-heart" type="button"></button>
-            </div>
-          </div>
+          <!--filled dynamically-->
         </section>
       </main>
       <footer class="footer">
@@ -108,7 +47,11 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__content">
-          <button class="modal__close-button" type="button"></button>
+          <button
+            class="modal__close-button"
+            id="edit-close-button"
+            type="button"
+          ></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="modal__form" name="modal-form" id="edit-profile-form">
             <input
@@ -123,11 +66,67 @@
               class="modal__input"
               required
             />
-            <button type="submit" class="modal__submit-button">Save</button>
+            <button type="submit" id="edit-submit" class="modal__submit-button">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="new-place-modal">
+        <div class="modal__content">
+          <button
+            class="modal__close-button"
+            id="new-place-close-button"
+            type="button"
+          ></button>
+          <h2 class="modal__title">New Place</h2>
+          <form class="modal__form" name="new-place-form" id="new-place-form">
+            <input
+              name="title"
+              placeholder="Title"
+              id="title-input"
+              class="modal__input"
+              required
+            />
+            <input
+              name="link"
+              placeholder="Image Link"
+              id="link-input"
+              class="modal__input"
+              required
+            />
+            <button
+              type="submit"
+              id="new-place-submit"
+              class="modal__submit-button"
+            >
+              Create
+            </button>
           </form>
         </div>
       </div>
     </div>
+    <div class="modal" id="image-popup">
+      <div class="modal__content modal__content_type_image">
+        <button
+          class="modal__close-button"
+          id="new-place-close-button"
+          type="button"
+        ></button>
+        <img class="modal__image" src="" alt="" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+    <template id="card-template">
+      <li class="card">
+        <button class="card__trash" type="button"></button>
+        <img src="" alt="" class="card__image" />
+        <div class="card__text-box">
+          <h2 class="card__text"></h2>
+          <button class="card__text-heart" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="index.js"></script>
   </body>
 </html>

@@ -15,6 +15,9 @@
 @import url("../blocks/modal/__submit-button/modal__submit-button.css");
 @import url("../blocks/modal/_open/modal_open.css");
 @import url("../blocks/modal/__input/modal__input.css");
+@import url("../blocks/modal/__caption/modal__caption.css");
+@import url("../blocks/modal/__image/modal__image.css");
+@import url("../blocks/modal/__content/__content_type_image/modal__content_type_image.css");
 
 @import url("../blocks/profile/profile.css");
 @import url("../blocks/profile/__image/profile__image.css");
@@ -24,9 +27,11 @@
 @import url("../blocks/profile/__occupation/profile__occupation.css");
 
 @import url("../blocks/element-grid/element-grid.css");
+@import url("../blocks/card/card.css");
 @import url("../blocks/card/__text-box/card__text-box.css");
 @import url("../blocks/card/__text/card__text.css");
 @import url("../blocks/card/__image/card__image.css");
+@import url("../blocks/card/__trash/card__trash.css");
 @import url("../blocks/card/__text-heart/card__text-heart.css");
 @import url("../blocks/card/__text-heart/_full/card__text-heart_full.css");
 
