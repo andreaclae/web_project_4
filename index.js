@@ -102,6 +102,8 @@ openModal(editProfileModal);
       closeModal(editProfileModal);
     });
   }
+  changeInputForm();
+
 
 modalCloseButtons.forEach((modalCloseButton) => {
   modalCloseButton.addEventListener("click", (event) => {
@@ -147,26 +149,21 @@ initialCards.forEach((cardData) => {
 })
 
 
-  newPlaceForm.addEventListener("submit", (e) => {
-    closeModal(newPlaceForm);
 
+  newPlaceForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     console.log(titleInput.value);
     console.log(linkInput.value);
-    debugger;
     const newCard = { title: titleInput.value, url: linkInput.value };
     initialCards.unshift(newCard);
-    createCard(newCard);
-    renderCard(newCard);
-
-   
+renderCard(newCard);
+newPlaceForm.reset();
+    closeModal(newPlaceModal);
   });
 
-  initialCards.forEach((cardData) => {
-    renderCard(cardData);
-  })
+ 
 
 
-changeInputForm();
 
 const likeButtons = document.querySelectorAll(".card__text-heart");
 
