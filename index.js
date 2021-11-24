@@ -1,33 +1,21 @@
 const editProfileModal = document.querySelector(".modal");
-//const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseButton =
   editProfileModal.querySelector("#edit-close-button");
 const newPlaceModal = document.querySelector("#new-place-modal");
-const newPlaceCloseButton = newPlaceModal.querySelector(
-  "#new-place-close-button"
-);
 const editModalButton = document.querySelector("#open-edit-modal-button");
-const openNewPlaceModalButton = document.querySelector(
-  "#open-new-place-modal-button"
-);
+const openNewPlaceModalButton = document.querySelector("#open-new-place-modal-button");
 const modalCloseButtons = document.querySelectorAll(".modal__close-button");
-
 const editProfileForm = document.querySelector("#edit-profile-form");
 const nameInput = editProfileForm.name;
 const descriptionInput = editProfileForm.description;
-
 const newPlaceForm = document.querySelector("#new-place-form");
 const titleInput = newPlaceForm.title;
 const linkInput = newPlaceForm.link;
-
 const editProfileSubmit = editProfileForm.querySelector("#edit-submit");
 const newPlaceSubmit = editProfileForm.querySelector("#new-place-submit");
-
 const profileName = document.querySelector("#profile-name");
 const profileDescription = document.querySelector("#profile-description");
-
 const imageModal = document.querySelector("#image-popup");
-
 const modalImageElement = imageModal.querySelector(".modal__image");
 const modalCaption = imageModal.querySelector(".modal__caption");
 const cardTemplate = document.querySelector("#card-template");
@@ -127,17 +115,16 @@ function createCard(data) {
 
   trashButton.addEventListener("click", () => {
     const removedCard = trashButton.closest(".card");
-         removedCard.remove();
-     });
+    removedCard.remove();
+  });
 
-    likeButton.addEventListener("click", () => {
-      if (likeButton.classList.contains("card__text-heart_full")) {
-        likeButton.classList.remove("card__text-heart_full");
-      } else {
-        likeButton.classList.add("card__text-heart_full");
-      }
-    });
-     
+  likeButton.addEventListener("click", () => {
+    if (likeButton.classList.contains("card__text-heart_full")) {
+      likeButton.classList.remove("card__text-heart_full");
+    } else {
+      likeButton.classList.add("card__text-heart_full");
+    }
+  });
 
   return card;
 }
@@ -166,8 +153,3 @@ newPlaceForm.addEventListener("submit", (e) => {
   likeButton();
   deleteButton();
 });
-
-
-
-
-
