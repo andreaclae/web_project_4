@@ -18,6 +18,7 @@ const profileDescription = document.querySelector("#profile-description");
 const imageModal = document.querySelector("#image-popup");
 const modalImageElement = imageModal.querySelector(".modal__image");
 const modalCaption = imageModal.querySelector(".modal__caption");
+const modalAlt = imageModal.querySelector(".modal__image").alt;
 const cardTemplate = document.querySelector("#card-template");
 const cardGrid = document.querySelector(".element-grid");
 
@@ -93,13 +94,13 @@ function createCard(data) {
 
   imageElement.src = data.url;
   titleElement.textContent = data.title;
-  modalImageElement.alt = data.title;
+  imageElement.alt = data.title;
 
 
   imageElement.addEventListener("click", () => {
     modalImageElement.src = data.url;
-    modalCaption.textContent = data.title;
     modalImageElement.alt = data.title;
+    modalCaption.textContent = data.title;
 
     openModal(imageModal);
   });
