@@ -52,17 +52,15 @@ function closeModal(modal) {
   modal.classList.remove("modal_open");
 }
 function openModal(modal) {
-  nameInput.value = profileName.innerText;
-  descriptionInput.value = profileDescription.innerText;
+
 
   modal.classList.add("modal_open");
 }
 
 function editProfileFormSubmitHandler(evt) {
-  e.preventDefault();
+  evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
-  editProfileForm.reset();
   closeModal(editProfileModal);
 }
 
@@ -70,24 +68,13 @@ function editProfileFormSubmitHandler(evt) {
 editProfileForm.addEventListener("submit", editProfileFormSubmitHandler);
 editModalButton.addEventListener("click", () => {
   openModal(editProfileModal);
+  nameInput.value = profileName.innerText;
+  descriptionInput.value = profileDescription.innerText;
 });
 //open the new place form
 openNewPlaceModalButton.addEventListener("click", () => {
   openModal(newPlaceModal);
 });
-
-function changeInputForm() {
-  editProfileForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    profileName.textContent = nameInput.value;
-    profileDescription.textContent = descriptionInput.value;
-
-    openModal(editProfileModal);
-    editProfileForm.reset();
-    closeModal(editProfileModal);
-  });
-}
-changeInputForm();
 
 modalCloseButtons.forEach((modalCloseButton) => {
   modalCloseButton.addEventListener("click", (event) => {
@@ -106,11 +93,14 @@ function createCard(data) {
 
   imageElement.src = data.url;
   titleElement.textContent = data.title;
+  modalImageElement.alt = data.title;
 
 
   imageElement.addEventListener("click", () => {
     modalImageElement.src = data.url;
     modalCaption.textContent = data.title;
+    modalImageElement.alt = data.title;
+
     openModal(imageModal);
   });
 
@@ -119,13 +109,10 @@ function createCard(data) {
     removedCard.remove();
   });
 
-  likeButton.addEventListener("click", () => {
-    if (likeButton.classList.contains("card__text-heart_full")) {
-      likeButton.classList.remove("card__text-heart_full");
-    } else {
-      likeButton.classList.add("card__text-heart_full");
-    }
-  });
+    likeButton.addEventListener("click", () => {
+      likeButton.classList.toggle("card__text-heart_full")
+    });
+
 
   return card;
 }
@@ -147,10 +134,7 @@ newPlaceForm.addEventListener("submit", (e) => {
   console.log(titleInput.value);
   console.log(linkInput.value);
   const newCard = { title: titleInput.value, url: linkInput.value };
-  initialCards.unshift(newCard);
   renderCard(newCard);
   newPlaceForm.reset();
   closeModal(newPlaceModal);
-  likeButton();
-  deleteButton();
 });
