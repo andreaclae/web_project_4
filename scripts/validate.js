@@ -34,7 +34,7 @@ function checkInputValidity(input) {
    
 }
 
-function removeErrorStyles(){
+function removeErrorStyles(input){
     input.classList.remove('modal__input_has-error')
     input.nextElementSibling.classList.remove('modal__error-text_visible')
 
