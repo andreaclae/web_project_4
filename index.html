@@ -60,18 +60,24 @@
               class="modal__input"
               minlength="2"
               maxlength="40"
+              id="name"
               required
             />
-            <span class="modal__error-text">Please fill out this field</span>
+            <span class="modal__error-text" id="name-error"
+              >Please fill out this field</span
+            >
             <input
               name="description"
               placeholder="About Me"
               class="modal__input"
               minlength="2"
               maxlength="200"
+              id="description"
               required
             />
-            <span class="modal__error-text">Please enter a web address</span>
+            <span class="modal__error-text" id="description-error"
+              >Please enter a web address</span
+            >
             <button type="submit" id="edit-submit" class="modal__submit-button">
               Save
             </button>
@@ -92,7 +98,9 @@
               maxlength="30"
               required
             />
-            <span class="modal__error-text">Please fill out this field</span>
+            <span class="modal__error-text" id="title-error"
+              >Please fill out this field</span
+            >
 
             <input
               name="link"
@@ -102,7 +110,7 @@
               type="url"
               required
             />
-            <span class="modal__error-text"
+            <span class="modal__error-text" id="link-error"
               >Please fill out this field. Must be URL</span
             >
 

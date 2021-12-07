@@ -36,17 +36,17 @@ function checkInputValidity(input) {
 
 function removeErrorStyles(){
     input.classList.remove('modal__input_has-error')
-    const errorText = input.closest('.modal__error-text')
-    errorText.classList.remove('modal__error-text_visible')
+    input.nextElementSibling.classList.remove('modal__error-text_visible')
 
-
+    
 }
 
 
 function addErrorStyles(input){
     input.classList.add('modal__input_has-error')
-    const errorText = input.closest('.modal__error-text')
-    errorText.classList.add('modal__error-text_visible')
+   input.nextElementSibling.classList.add('modal__error-text_visible')
+
+          
 
 }
 
