@@ -139,3 +139,5 @@ newPlaceForm.addEventListener("submit", (e) => {
   newPlaceForm.reset();
   closeModal(newPlaceModal);
 });
+
+

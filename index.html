@@ -58,14 +58,20 @@
               name="name"
               placeholder="Full Name"
               class="modal__input"
+              minlength="2"
+              maxlength="40"
               required
             />
+            <span class="modal__error-text">Please fill out this field</span>
             <input
               name="description"
               placeholder="About Me"
               class="modal__input"
+              minlength="2"
+              maxlength="200"
               required
             />
+            <span class="modal__error-text">Please enter a web address</span>
             <button type="submit" id="edit-submit" class="modal__submit-button">
               Save
             </button>
@@ -82,15 +88,24 @@
               placeholder="Title"
               id="title-input"
               class="modal__input"
+              minlength="1"
+              maxlength="30"
               required
             />
+            <span class="modal__error-text">Please fill out this field</span>
+
             <input
               name="link"
               placeholder="Image Link"
               id="link-input"
               class="modal__input"
+              type="url"
               required
             />
+            <span class="modal__error-text"
+              >Please fill out this field. Must be URL</span
+            >
+
             <button
               type="submit"
               id="new-place-submit"
@@ -119,6 +134,7 @@
         </div>
       </li>
     </template>
-    <script src="index.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
