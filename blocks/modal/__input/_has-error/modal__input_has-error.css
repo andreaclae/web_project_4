@@ -1,3 +1,4 @@
 .modal__input_has-error {
   border-bottom-color: red;
+  max-width: 75vw;
 }

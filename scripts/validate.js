@@ -23,6 +23,8 @@ function setEventListeners(form, settings) {
       //check if it's valid
       checkAllInputs(inputs, button);
       //check if all the inputs are valid
+      changErrorText(input, settings);
+      debugger;
     });
   });
 }
@@ -57,18 +59,23 @@ function addErrorStyles(input, settings) {
   input.classList.add("modal__input_has-error");
   const span = document.querySelector(`#${input.id}-error`);
   span.classList.add("modal__error-text_visible");
+  if (input.value.length == 0) {
+    span.textContent = "Please fill out this field";
+  } else if (input.value.length < input.minLength) {
+    span.textContent =
+      "Please lengthen this text to " +
+      input.minLength +
+      " characters or more. Your are currently using " +
+      input.value.length +
+      " character";
+  }
 }
+
 function deactivateButton(button) {
   button.disabled = true;
 }
 function activateButton(button) {
   button.disabled = false;
 }
-//for each form
-//get all inputs
-//add event listener to each input
-//check validity of that input
-//check validity of that all inputs
-//chnage the disabled status of submit button
 
 //validity should have error text as well use .textcontent to change text
