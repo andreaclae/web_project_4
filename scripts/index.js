@@ -1,8 +1,11 @@
 const editProfileModal = document.querySelector(".modal");
-const editProfileCloseButton = editProfileModal.querySelector("#edit-close-button");
+const editProfileCloseButton =
+  editProfileModal.querySelector("#edit-close-button");
 const newPlaceModal = document.querySelector("#new-place-modal");
 const editModalButton = document.querySelector("#open-edit-modal-button");
-const openNewPlaceModalButton = document.querySelector("#open-new-place-modal-button");
+const openNewPlaceModalButton = document.querySelector(
+  "#open-new-place-modal-button"
+);
 const modalCloseButtons = document.querySelectorAll(".modal__close-button");
 const editProfileForm = document.querySelector("#edit-profile-form");
 const nameInput = editProfileForm.name;
@@ -52,8 +55,6 @@ function closeModal(modal) {
   modal.classList.remove("modal_open");
 }
 function openModal(modal) {
-
-
   modal.classList.add("modal_open");
 }
 
@@ -95,7 +96,6 @@ function createCard(data) {
   titleElement.textContent = data.title;
   imageElement.alt = data.title;
 
-
   imageElement.addEventListener("click", () => {
     modalImageElement.src = data.url;
     modalImageElement.alt = data.title;
@@ -109,10 +109,9 @@ function createCard(data) {
     removedCard.remove();
   });
 
-    likeButton.addEventListener("click", () => {
-      likeButton.classList.toggle("card__text-heart_full")
-    });
-
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__text-heart_full");
+  });
 
   return card;
 }
@@ -139,9 +138,16 @@ newPlaceForm.addEventListener("submit", (e) => {
   closeModal(newPlaceModal);
 });
 
-document.addEventListener('keydown', (event =>{
-  if(event.key === "Escape"){
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
     const currentModal = document.querySelector(".modal_open");
-    closeModal(currentModal)
-    }
-}))
+    closeModal(currentModal);
+  }
+});
+
+document.addEventListener("click", (event) => {
+  const isOutside = event.target.closest(".modal");
+  if (event.target === isOutside) {
+    closeModal(isOutside);
+  }
+});

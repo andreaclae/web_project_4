@@ -78,4 +78,10 @@ function activateButton(button) {
   button.disabled = false;
 }
 
+function resetValidation(input, form, settings) {
+  input.classList.remove("modal__input_has-error");
+  const button = form.querySelector(settings.submitButtonSelector);
+  button.disabled = true;
+}
+
 //validity should have error text as well use .textcontent to change text
