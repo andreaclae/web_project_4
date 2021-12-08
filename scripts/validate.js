@@ -1,4 +1,4 @@
-
+var isValid = true;
 
 enableValidation({
     formSelector: '.modal__form',
@@ -22,38 +22,48 @@ function setEventListeners(form, settings){
 inputs.forEach((input) => {
     //add the event listenser
     input.addEventListener('input', (event) => {
-        checkInputValidity(input)
+        checkInputValidity(input, settings)
     //check if it's valid
     //check if all the inputs are valid
     })
-})}
+    
+})
+
+}
 
 function checkInputValidity(input, settings) {
    if(input.validity.valid){
        removeErrorStyles(input)
+       isValid = true;
    }else{
        addErrorStyles(input)
-   }
+       isValid = false;
+   } 
+   return isValid
    
 }
 
 function removeErrorStyles(input, settings){
     input.classList.remove('modal__input_has-error')
-    input.nextElementSibling.classList.remove('modal__error-text_visible')
+ input.nextElementSibling.classList.remove('modal__error-text_visible')
 
-    
+ const currentModalButton = input.form.querySelector(".modal__submit-button")
+     currentModalButton.disabled = false;
+     currentModalButton.classList.remove('modal__submit-button_disabled')
+
 }
 
 
 function addErrorStyles(input, settings){
-    const currentForms = document.querySelectorAll(settings.formSelector);
     input.classList.add('modal__input_has-error')
    input.nextElementSibling.classList.add('modal__error-text_visible')
 
-
-          
-
+  const currentModalButton = input.form.querySelector(".modal__submit-button")
+    currentModalButton.disabled = true;
+    currentModalButton.classList.add('modal__submit-button_disabled')
 }
+
+
 
 //for each form
     //get all inputs

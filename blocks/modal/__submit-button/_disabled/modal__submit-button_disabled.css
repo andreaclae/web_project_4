@@ -1,0 +1,12 @@
+.modal__submit-button_disabled {
+  color: #000000;
+  opacity: 0.2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: white;
+}
+.modal__submit-button_disabled:hover {
+  cursor: default;
+  opacity: 0.2;
+}
