@@ -16,6 +16,19 @@
   opacity: 0.8;
 }
 
+.modal__submit-button:disabled {
+  color: #000000;
+  opacity: 0.2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: white;
+}
+.modal__submit-button:disabled:hover {
+  cursor: default;
+  opacity: 0.2;
+}
+
 @media screen and (max-width: 625px) {
   .modal__submit-button {
     min-width: 232px;
