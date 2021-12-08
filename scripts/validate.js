@@ -4,7 +4,10 @@ enableValidation({
     formSelector: '.modal__form',
     inputSelector: '.modal__input',
     errorTextSelector: '.modal__error-text', 
+    submitButtonSelector: ".modal__submit-button",
+    inactiveButtonClass: "modal__button_disabled",
 })
+
 
 function enableValidation(settings) {
     const forms = document.querySelectorAll(settings.formSelector)
@@ -15,17 +18,17 @@ function enableValidation(settings) {
 
 function setEventListeners(form, settings){
  const inputs = form.querySelectorAll(settings.inputSelector);
+ 
 inputs.forEach((input) => {
     //add the event listenser
     input.addEventListener('input', (event) => {
         checkInputValidity(input)
     //check if it's valid
     //check if all the inputs are valid
-
     })
 })}
 
-function checkInputValidity(input) {
+function checkInputValidity(input, settings) {
    if(input.validity.valid){
        removeErrorStyles(input)
    }else{
@@ -34,7 +37,7 @@ function checkInputValidity(input) {
    
 }
 
-function removeErrorStyles(input){
+function removeErrorStyles(input, settings){
     input.classList.remove('modal__input_has-error')
     input.nextElementSibling.classList.remove('modal__error-text_visible')
 
@@ -42,9 +45,11 @@ function removeErrorStyles(input){
 }
 
 
-function addErrorStyles(input){
+function addErrorStyles(input, settings){
+    const currentForms = document.querySelectorAll(settings.formSelector);
     input.classList.add('modal__input_has-error')
    input.nextElementSibling.classList.add('modal__error-text_visible')
+
 
           
 

@@ -1,6 +1,5 @@
 const editProfileModal = document.querySelector(".modal");
-const editProfileCloseButton =
-  editProfileModal.querySelector("#edit-close-button");
+const editProfileCloseButton = editProfileModal.querySelector("#edit-close-button");
 const newPlaceModal = document.querySelector("#new-place-modal");
 const editModalButton = document.querySelector("#open-edit-modal-button");
 const openNewPlaceModalButton = document.querySelector("#open-new-place-modal-button");
@@ -140,4 +139,9 @@ newPlaceForm.addEventListener("submit", (e) => {
   closeModal(newPlaceModal);
 });
 
-
+document.addEventListener('keydown', (event =>{
+  if(event.key === "Escape"){
+    const currentModal = document.querySelector(".modal_open");
+    closeModal(currentModal)
+    }
+}))
