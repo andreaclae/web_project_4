@@ -51,15 +51,29 @@ const initialCards = [
   },
 ];
 
+function openModal(modal) {
+  modal.classList.add("modal_open");
+  document.addEventListener("keydown", handleKeyDown);
+  document.addEventListener("mousedown", handleMouseDown);
+}
+
 function closeModal(modal) {
   modal.classList.remove("modal_open");
+  document.removeEventListener("keydown", handleKeyDown);
+  document.removeEventListener("mousedown", handleMouseDown);
 }
-function openModal(modal) {
-  const submitButton = modal.querySelector(".modal__submit-button");
-  submitButton.disabled = true;
-  escapeKeyListener();
-  mouseDownListener();
-  modal.classList.add("modal_open");
+
+function handleKeyDown(event) {
+  if (event.key === "Escape") {
+    const currentModal = document.querySelector(".modal_open");
+    closeModal(currentModal);
+  }
+}
+
+function handleMouseDown(event) {
+  if (event.target.classList.contains("modal_open")) {
+    closeModal(event.target);
+  }
 }
 
 function editProfileFormSubmitHandler(evt) {
@@ -72,12 +86,16 @@ function editProfileFormSubmitHandler(evt) {
 //open the edit form
 editProfileForm.addEventListener("submit", editProfileFormSubmitHandler);
 editModalButton.addEventListener("click", () => {
+  const submitButton = editProfileModal.querySelector(".modal__submit-button");
+  submitButton.disabled = true;
   openModal(editProfileModal);
   nameInput.value = profileName.innerText;
   descriptionInput.value = profileDescription.innerText;
 });
 //open the new place form
 openNewPlaceModalButton.addEventListener("click", () => {
+  const submitButton = newPlaceModal.querySelector(".modal__submit-button");
+  submitButton.disabled = true;
   openModal(newPlaceModal);
 });
 
@@ -136,21 +154,4 @@ newPlaceForm.addEventListener("submit", (e) => {
   renderCard(newCard);
   newPlaceForm.reset();
   closeModal(newPlaceModal);
-});
-
-function escapeKeyListener() {
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      const currentModal = document.querySelector(".modal_open");
-      closeModal(currentModal);
-    }
-  });
-}
-
-function mouseDownListener() {}
-document.addEventListener("click", (event) => {
-  const closestModal = event.target.closest(".modal");
-  if (event.target.classList.contains("modal_open")) {
-    closeModal(closestModal);
-  }
 });
