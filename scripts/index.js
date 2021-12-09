@@ -147,11 +147,10 @@ function escapeKeyListener() {
   });
 }
 
-function mouseDownListener(){}
+function mouseDownListener() {}
 document.addEventListener("click", (event) => {
   const closestModal = event.target.closest(".modal");
   if (event.target.classList.contains("modal_open")) {
     closeModal(closestModal);
   }
 });
-}
