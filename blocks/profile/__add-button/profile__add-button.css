@@ -11,6 +11,10 @@
   border: 2px solid #ffffff;
   padding: 0;
 }
+
+.profile__add-button:focus-visible {
+  outline: transparent;
+}
 @media (hover: hover) {
   .profile__add-button:hover {
     cursor: pointer;

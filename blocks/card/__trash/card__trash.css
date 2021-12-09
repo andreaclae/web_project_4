@@ -16,6 +16,10 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.card__trash:focus-visible {
+  outline: transparent;
+}
+
 @media (hover: hover) {
   .card__trash:hover {
     cursor: pointer;
