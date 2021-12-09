@@ -1,16 +1,15 @@
-enableValidation({
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  errorTextSelector: ".modal__error-text",
-  submitButtonSelector: ".modal__submit-button",
-});
-
 function enableValidation(settings) {
   const forms = document.querySelectorAll(settings.formSelector);
   forms.forEach((form) => {
     setEventListeners(form, settings);
   });
 }
+enableValidation({
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  errorTextSelector: ".modal__error-text",
+  submitButtonSelector: ".modal__submit-button",
+});
 
 function setEventListeners(form, settings) {
   const inputs = form.querySelectorAll(settings.inputSelector);
@@ -24,17 +23,12 @@ function setEventListeners(form, settings) {
       checkAllInputs(inputs, button);
       //check if all the inputs are valid
       changErrorText(input, settings);
-      debugger;
     });
   });
 }
 function checkAllInputs(inputs, button) {
-  var inputArr = Array.from(inputs);
-  if (
-    inputArr.every((input) => {
-      return input.validity.valid;
-    })
-  ) {
+  const inputArr = Array.from(inputs);
+  if (inputArr.every((input) => input.validity.valid)) {
     activateButton(button);
   } else {
     deactivateButton(button);
@@ -62,12 +56,7 @@ function addErrorStyles(input, settings) {
   if (input.value.length == 0) {
     span.textContent = "Please fill out this field";
   } else if (input.value.length < input.minLength) {
-    span.textContent =
-      "Please lengthen this text to " +
-      input.minLength +
-      " characters or more. Your are currently using " +
-      input.value.length +
-      " character";
+    span.textContent = input.validationMessage;
   }
 }
 
@@ -76,12 +65,6 @@ function deactivateButton(button) {
 }
 function activateButton(button) {
   button.disabled = false;
-}
-
-function resetValidation(input, form, settings) {
-  input.classList.remove("modal__input_has-error");
-  const button = form.querySelector(settings.submitButtonSelector);
-  button.disabled = true;
 }
 
 //validity should have error text as well use .textcontent to change text

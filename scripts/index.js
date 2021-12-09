@@ -55,6 +55,10 @@ function closeModal(modal) {
   modal.classList.remove("modal_open");
 }
 function openModal(modal) {
+  const submitButton = modal.querySelector(".modal__submit-button");
+  submitButton.disabled = true;
+  escapeKeyListener();
+  mouseDownListener();
   modal.classList.add("modal_open");
 }
 
@@ -124,30 +128,30 @@ function renderCard(data) {
   addCardToPage(createCard(data));
 }
 
-initialCards.forEach((cardData) => {
-  renderCard(cardData);
-});
+initialCards.forEach(renderCard);
 
 newPlaceForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(titleInput.value);
-  console.log(linkInput.value);
   const newCard = { title: titleInput.value, url: linkInput.value };
   renderCard(newCard);
   newPlaceForm.reset();
   closeModal(newPlaceModal);
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    const currentModal = document.querySelector(".modal_open");
-    closeModal(currentModal);
-  }
-});
+function escapeKeyListener() {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const currentModal = document.querySelector(".modal_open");
+      closeModal(currentModal);
+    }
+  });
+}
 
+function mouseDownListener(){}
 document.addEventListener("click", (event) => {
-  const isOutside = event.target.closest(".modal");
-  if (event.target === isOutside) {
-    closeModal(isOutside);
+  const closestModal = event.target.closest(".modal");
+  if (event.target.classList.contains("modal_open")) {
+    closeModal(closestModal);
   }
 });
+}
